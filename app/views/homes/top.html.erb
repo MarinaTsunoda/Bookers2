@@ -11,12 +11,8 @@
       </p>
       <p>you can share and exchange your opinions , inpressions , and emotions</p>
       <p>about various books!</p>
-      <div class="bg-info rounded text-center mb-3 p-1">
-        <%= link_to "Log in", user_session_path %>
-      </div>
-      <div class="bg-success rounded text-center mb-3 p-1">
-        <%= link_to "Sign up", new_user_registration_path %>
-      </div>
+      <%= link_to "Log in", user_session_path, class: 'btn btn-default bg-info rounded text-center mb-3 p-1 d-block text-light' %>
+      <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-default bg-success rounded text-center mb-3 p-1 d-block text-light' %>
     </div>
   </div>
 </div>
