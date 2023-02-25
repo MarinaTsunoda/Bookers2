@@ -1,26 +1,26 @@
 <div class="col-md-3">
   <h2>User info</h2>
-  <%= image_tag current_user.image %>
-  <table>
+  <%= image_tag current_user.get_image(100,100) %>
+  <table cellpadding="10" class="mb-4">
     <tr class="py-3 border-top">
       <th>name</th>
-      <td class=" text-center"><%= current_user.name %></td>
+      <td><%= current_user.name %></td>
     </tr>
     <tr class="py-3 border-top">
       <th>introduction</th>
-      <td class=" text-center"><%= current_user.introduction %></td>
+      <td><%= current_user.introduction %></td>
     </tr>
   </table>
-  <%= link_to edit_user_path, class: 'btn btn-default' do %>
+  <%= link_to edit_user_path, class: 'btn btn-outline-dark w-100 mb-4' do %>
     <i class="fas fa-user-cog"></i>
   <% end %>
   
   <h2>New book</h2>
   <%= form_with model: book, url: books_path, method: :post do |f| %>
-    <p>Title</p>
-    <%= f.text_field :title %>
-    <p>Opinion</p>
-    <%= f.text_area :body %>
-    <%= f.submit 'Create Book', class:'bg-success' %>
+    <label>Title</label><br>
+    <%= f.text_field :title, class:'w-100' %><br>
+    <label class="mt-2">Opinion</label><br>
+    <%= f.text_area :body, class:'w-100' %>
+    <%= f.submit 'Create Book', class:'bg-success rounded border-0 p-2 text-light mt-3' %>
   <% end %>
 </div>
