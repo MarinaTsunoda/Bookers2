@@ -6,31 +6,31 @@
     <div class="col-md-8 offset-md-1">
       <h2>Book detail</h2>
       <hr noshade>
-      <table>
-        <td width=>
+      <table width="100%">
+        <td width="25%">
           <div class="user-info">
-            <%= image_tag @book.get_image %><br>
+            <%= image_tag @book.get_image(100,100) %><br>
             <%= link_to user_path(@book.user_id) do %>
               <%= @book.user.name %>
             <% end %>
           </div>
         </td>
-        <td>
+        <td width="15%" class="align-text-top">
           <%= link_to book_path(@book.id) do %>
             <%= @book.title %>
           <% end %>
         </td>
-        <td>
+        <td width="30%" class="align-text-top">
           <%= @book.body %>
         </td>
-        <td>
+        <td width="15%" class="align-text-top">
           <% if @book.user == current_user %>
-            <%= link_to "Edit", edit_book_path(@book.id), class: 'btn btn-default' %>
+            <%= link_to "Edit", edit_book_path(@book.id), class: 'btn btn-success' %>
           <% end %>
         </td>
-        <td>
+        <td width="15%" class="align-text-top">
           <% if @book.user == current_user %>
-            <%= link_to "Destroy", books_path, method: :delete, "data-confirm" => "本当に消しますか?", class:'btn btn-default' %>
+            <%= link_to "Destroy", book_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか?", class:'btn btn-danger' %>
           <% end %>
         </td>
       </table>
