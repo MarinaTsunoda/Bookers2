@@ -5,6 +5,14 @@
     
     <div class="col-md-8 offset-md-1">
       <h2>Books</h2>
+      <% if @book.errors.any? %>
+        <%= @book.errors.count %>errors prohibited this book from being saved:
+        <ul>
+          <% @book.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
       <table width="100%">
         <tr class="border-top">
           <th width="20%" class="p-2"></th>
