@@ -16,7 +16,7 @@
   <% end %>
   
   <h2>New book</h2>
-  <%= form_with model: book do |f| %>
+  <%= form_with model: book, method: :post do |f| %>
     <label>Title</label><br>
     <%= f.text_field :title, class:'w-100' %><br>
     <label class="mt-2">Opinion</label><br>
