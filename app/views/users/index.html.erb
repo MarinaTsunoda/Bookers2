@@ -1,7 +1,9 @@
 <div class="container">
   <div class="row p-4">
 
-    <%= render 'users/user_info', book: @book %>
+   <%= render 'user_info', { user: @user } %>
+  
+
 
     <div class="col-md-8 offset-md-1">
       <h2>Users</h2>
@@ -13,7 +15,7 @@
         </tr>
         <% @users.each do |user| %>
           <tr class="border-top">
-            <td width="35%" class="p-2"><%= image_tag user.get_image(80,80) %></td>
+            <td width="35%" class="p-2"><%= image_tag user.get_profile_image(80,80) %></td>
             <td width="45%" class="p-2 align-text-top"><%= user.name %></td>
             <td width="20%" class="p-2 align-text-top"><%= link_to 'Show', user_path(user.id) %></td>
           </tr>
